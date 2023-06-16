@@ -1,16 +1,22 @@
 import './App.css';
-import Person1 from './components/Person1';
-import Person2 from './components/Person2';
+import List from './components/List';
+import Row from './components/Row';
+import { products } from './components/data';
 
 function App() {
   return (
-    <>
-      <div>
-        <h1>Auction</h1>
-        <Person1 />
-        <Person2 />
-      </div>
-    </>
+    <div>
+      <List
+        items={products}
+        renderItem={(product, isHighlighted) => (
+          <Row
+            key={product.id}
+            title={product.title}
+            isHighlighted={isHighlighted}
+          />
+        )}
+      />
+    </div>
   );
 }
 
