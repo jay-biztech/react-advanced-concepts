@@ -1,7 +1,8 @@
-import React from 'react';
-import UpdatedComponent from './HOC';
+import { useAuction } from './hooks';
 
-function Person2({ money, handleIncrease }) {
+function Person2() {
+  const [money, handleIncrease] = useAuction();
+
   return (
     <div>
       <h2>Jay is offering ${money}</h2>
@@ -10,4 +11,4 @@ function Person2({ money, handleIncrease }) {
   );
 }
 
-export default UpdatedComponent(Person2);
+export default Person2;
